@@ -10,7 +10,6 @@ import {User} from "./pages/User/User";
 import {configureStore} from "@reduxjs/toolkit";
 import rootReducer from "./reducers/index.js";
 import {Provider} from "react-redux";
-import {EditForm} from "./components/EditForm/EditForm";
 import {Protected} from "./components/Protected/Protected";
 
 

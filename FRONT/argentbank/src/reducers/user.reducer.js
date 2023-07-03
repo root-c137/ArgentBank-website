@@ -40,7 +40,8 @@ export const userReducer = (state = initialState, action) => {
         }
         case LOG_OUT :
         {
-            return {...state, token: '', username: ''}
+            localStorage.clear();
+            return {...state, token: null, username: null, email : null, lastName: null, firstName: null};
         }
         default : return state;
     }

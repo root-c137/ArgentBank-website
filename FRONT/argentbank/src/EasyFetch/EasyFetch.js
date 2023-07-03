@@ -3,12 +3,10 @@
 
 export const EasyFetch = (Url, Data = null, Method, Token = null) => {
 
-    console.log(Data);
     const BaseURL = "http://localhost:3001/api/v1/";
     const Body = Data !== null ? JSON.stringify(Data) : [];
     const CurrentUrl = BaseURL+Url;
 
-    console.log(Body);
     const Header = {
         'Accept' : 'application/json',
         'Content-Type' : 'application/json',

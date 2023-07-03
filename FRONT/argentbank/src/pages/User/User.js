@@ -2,8 +2,8 @@
 import './User.css';
 import {Account} from "../../components/Account/Account";
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect, useState} from "react";
-import {GET_PROFILE, getProfile} from "../../actions/user.action";
+import {useEffect} from "react";
+import {getProfile} from "../../actions/user.action";
 import {EditForm} from "../../components/EditForm/EditForm";
 import {OpenClose} from "../../actions/editform.action";
 

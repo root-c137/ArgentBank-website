@@ -1,5 +1,5 @@
 
-import  argentBankLogo from '../../img/argentBankLogo.png';
+import  argentBankLogo from '../../img/argentBankLogo.webp';
 import './Header.css';
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";

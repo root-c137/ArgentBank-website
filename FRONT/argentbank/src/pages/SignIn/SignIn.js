@@ -1,12 +1,10 @@
 
 
 import './SignIn.css';
-import {Link, redirect, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {Login, LOGIN} from "../../actions/user.action";
+import {Login} from "../../actions/user.action";
 import {useEffect, useState} from "react";
-import {User} from "../User/User";
-import {userReducer} from "../../reducers/user.reducer";
 import {Error} from "../../components/Error/Error";
 
 export const SignIn = () =>

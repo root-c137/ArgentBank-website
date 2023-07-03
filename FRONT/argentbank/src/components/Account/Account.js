@@ -2,7 +2,7 @@
 
 import './Account.css';
 
-export const Account = ({title, amount, desc}) =>
+export const Account = () =>
 {
     return(
         <section className="account">

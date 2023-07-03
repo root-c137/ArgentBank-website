@@ -1,9 +1,9 @@
 
 
 import './Features.css';
-import IconChat from '../../img/icon-chat.png';
-import IconMoney from '../../img/icon-money.png';
-import IconSecurity from '../../img/icon-security.png';
+import IconChat from '../../img/icon-chat_1.webp';
+import IconMoney from '../../img/icon-money_1.webp';
+import IconSecurity from '../../img/icon-security_1.webp';
 
 
 export const Features = () =>
