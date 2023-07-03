@@ -1,9 +1,11 @@
-import {GET_PROFILE, LOG_OUT, LOGIN} from "../actions/user.action";
+import {GET_PROFILE, LOG_OUT, LOGIN, UPDATE_USERNAME} from "../actions/user.action";
 
 
 const initialState = {
-    "username" : localStorage.getItem('firstName'),
-    "email" : '',
+    "username" : localStorage.getItem('userName'),
+    "firstName" : localStorage.getItem('firstName'),
+    "lastName" : localStorage.getItem('lastName'),
+    "email" : localStorage.getItem('email'),
     "token" : localStorage.getItem('token'),
     "error" : null
 }
@@ -25,8 +27,18 @@ export const userReducer = (state = initialState, action) => {
         }
         case GET_PROFILE :
         {
+            console.log('getprofile');
             localStorage.setItem('firstName', action.payload.body.firstName);
-            return {...state, username : action.payload.body.firstName};
+            localStorage.setItem('lastName', action.payload.body.lastName);
+            localStorage.setItem('userName', action.payload.body.userName);
+            localStorage.setItem('email', action.payload.body.email);
+            return {...state, firstName : action.payload.body.firstName};
+        }
+        case UPDATE_USERNAME :
+        {
+            console.log(action.payload);
+            localStorage.setItem('userName', action.payload.body.userName);
+            return {...state, username: action.payload.body.userName};
         }
         case LOG_OUT :
         {

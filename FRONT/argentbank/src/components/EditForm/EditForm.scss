@@ -1,0 +1,65 @@
+
+
+
+.EditForm
+{
+    width:100%;
+
+    H3
+    {
+      font-size: 1.5rem;
+    }
+
+    .FormInput, .FormLabel
+    {
+        width:90px;
+    }
+    .FormLabel
+    {
+        font-weight: bold;
+        margin:5px;
+    }
+
+    .FormInput
+    {
+        width: 160px;
+        height:30px;
+        outline: none;
+        border-radius: 5px;
+        border:1px solid lightgray;
+        padding:4px;
+        padding-left: 10px;
+
+        &#FirstName, &#LastName
+        {
+            background-color: lightgray;
+            cursor: initial;
+        }
+    }
+
+    .FormGroup
+    {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Form__Button
+    {
+        width: 150px;
+        padding:18px;
+        background-color: #61B37B;
+        color: #fff;
+        border:none;
+        margin:10px;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover
+        {
+            background-color: #00bc77;
+        }
+    }
+}

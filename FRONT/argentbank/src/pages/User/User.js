@@ -1,18 +1,24 @@
 
 import './User.css';
 import {Account} from "../../components/Account/Account";
-import {useDispatch} from "react-redux";
-import {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect, useState} from "react";
 import {GET_PROFILE, getProfile} from "../../actions/user.action";
+import {EditForm} from "../../components/EditForm/EditForm";
+import {OpenClose} from "../../actions/editform.action";
 
 export const User = () =>
 {
+
     const Dispatch = useDispatch();
-    
+    const EditFormState = useSelector((state) => state.editFormReducer);
+    const UserState = useSelector((state) => state.userReducer);
+
+
+
     useEffect(() =>
     {
-        console.log('username  : ');
-        if(localStorage.getItem('token') ){
+        if(localStorage.getItem('token') && !localStorage.getItem('firstName') ){
             console.log('yes');
             Dispatch(getProfile());
         }
@@ -22,8 +28,15 @@ export const User = () =>
     return(
         <main className="main bg-dark">
             <div className="header">
-                <h1>Welcome back<br/>Tony Jarvis!</h1>
-                <button className="edit-button">Edit Name</button>
+                {EditFormState.isOpen ? <EditForm /> :
+
+                <>
+                    <h1>Welcome back<br/>{UserState.firstName} {UserState.lastName}!</h1>
+                    <button className="edit-button" onClick={() => {
+                    Dispatch(OpenClose() );
+                    }}>Edit Name</button>
+                </>
+            }
             </div>
             <h2 className="sr-only">Accounts</h2>
             <Account />

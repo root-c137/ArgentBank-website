@@ -10,6 +10,7 @@ import {User} from "./pages/User/User";
 import {configureStore} from "@reduxjs/toolkit";
 import rootReducer from "./reducers/index.js";
 import {Provider} from "react-redux";
+import {EditForm} from "./components/EditForm/EditForm";
 
 
 const Store = configureStore({
@@ -26,7 +27,8 @@ root.render(
                       <Routes>
                           <Route path="/" element={<Home/>} />
                           <Route path="/sign-in" element={<SignIn />} />
-                          <Route path="/user" element={<User />} />
+                          <Route path="/profile" element={<User />} />
+                          <Route path="/edit" element={<EditForm />} />
                       </Routes>
                   <Footer />
               </BrowserRouter>

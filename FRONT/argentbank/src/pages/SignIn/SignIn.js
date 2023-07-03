@@ -23,7 +23,7 @@ export const SignIn = () =>
         console.log(State.error );
         if(State.token )
         {
-            Navigate('/user');
+            Navigate('/profile');
         }
     })
 
