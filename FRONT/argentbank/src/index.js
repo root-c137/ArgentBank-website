@@ -11,6 +11,7 @@ import {configureStore} from "@reduxjs/toolkit";
 import rootReducer from "./reducers/index.js";
 import {Provider} from "react-redux";
 import {EditForm} from "./components/EditForm/EditForm";
+import {Protected} from "./components/Protected/Protected";
 
 
 const Store = configureStore({
@@ -27,7 +28,10 @@ root.render(
                       <Routes>
                           <Route path="/" element={<Home/>} />
                           <Route path="/sign-in" element={<SignIn />} />
-                          <Route path="/profile" element={<User />} />
+
+                          <Route path="/profile"
+                                 element={<Protected><User /></Protected>}
+                          />
                           <Route path="/edit" element={<EditForm />} />
                       </Routes>
                   <Footer />
