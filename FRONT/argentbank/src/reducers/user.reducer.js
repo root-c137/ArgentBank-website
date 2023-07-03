@@ -27,7 +27,6 @@ export const userReducer = (state = initialState, action) => {
         }
         case GET_PROFILE :
         {
-            console.log('getprofile');
             localStorage.setItem('firstName', action.payload.body.firstName);
             localStorage.setItem('lastName', action.payload.body.lastName);
             localStorage.setItem('userName', action.payload.body.userName);
@@ -36,13 +35,11 @@ export const userReducer = (state = initialState, action) => {
         }
         case UPDATE_USERNAME :
         {
-            console.log(action.payload);
             localStorage.setItem('userName', action.payload.body.userName);
             return {...state, username: action.payload.body.userName};
         }
         case LOG_OUT :
         {
-            localStorage.clear();
             return {...state, token: '', username: ''}
         }
         default : return state;

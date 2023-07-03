@@ -7,7 +7,6 @@ export const editFormReducer = (state = initialState, action) => {
     {
         case OPENCLOSE :
         {
-            console.log('openclose...');
             return {...state, isOpen: !state.isOpen};
         }
         default : return state;
