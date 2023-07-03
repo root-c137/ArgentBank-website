@@ -23,7 +23,7 @@ export const SignIn = () =>
                         <input type="checkbox" id="remember-me"/><label htmlFor="remember-me"
                     >Remember me</label>
                     </div>
-                    <Link to={'sign-in'} className={"sign-in-button"}>
+                    <Link to={'/user'} className={"sign-in-button"}>
                         <button>Sign In</button>
                     </Link>
                 </form>
