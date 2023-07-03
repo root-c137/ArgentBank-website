@@ -28,11 +28,9 @@ root.render(
                       <Routes>
                           <Route path="/" element={<Home/>} />
                           <Route path="/sign-in" element={<SignIn />} />
-
                           <Route path="/profile"
                                  element={<Protected><User /></Protected>}
                           />
-                          <Route path="/edit" element={<EditForm />} />
                       </Routes>
                   <Footer />
               </BrowserRouter>
