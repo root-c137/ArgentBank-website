@@ -4,6 +4,7 @@ import './App.css';
 import {Route, BrowserRouter, Routes} from "react-router-dom";
 import {Home} from "./pages/Home/Home";
 import {Header} from "./components/Header/Header";
+import {SignIn} from "./pages/SignIn/SignIn";
 import {Footer} from "./components/Footer/Footer";
 
 
@@ -15,6 +16,7 @@ root.render(
               <Header />
                   <Routes>
                       <Route path="/" element={<Home/>} />
+                      <Route path="/sign-in" element={<SignIn />} />
                   </Routes>
               <Footer />
           </BrowserRouter>
