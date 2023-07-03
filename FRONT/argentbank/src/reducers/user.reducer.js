@@ -1,4 +1,4 @@
-import {GET_PROFILE, LOGIN} from "../actions/user.action";
+import {GET_PROFILE, LOG_OUT, LOGIN} from "../actions/user.action";
 
 
 const initialState = {
@@ -27,6 +27,11 @@ export const userReducer = (state = initialState, action) => {
         {
             localStorage.setItem('firstName', action.payload.body.firstName);
             return {...state, username : action.payload.body.firstName};
+        }
+        case LOG_OUT :
+        {
+            localStorage.clear();
+            return {...state, token: '', username: ''}
         }
         default : return state;
     }

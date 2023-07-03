@@ -4,6 +4,8 @@ import {EasyFetch} from "../EasyFetch/EasyFetch";
 export const LOGIN = "LOGIN";
 export const GET_PROFILE = "GET_PROFILE";
 
+export const LOG_OUT = "LOG_OUT";
+
 export const Login = (Data) =>
 {
     return (dispatch) => {
@@ -28,3 +30,11 @@ export const getProfile = () =>
         })
     }
 }
+
+export const logOut = () =>
+{
+    return (dispatch) => {
+        dispatch({type : LOG_OUT});
+    }
+}
+
