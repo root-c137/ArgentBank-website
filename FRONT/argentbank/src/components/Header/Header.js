@@ -2,9 +2,12 @@
 import  argentBankLogo from '../../img/argentBankLogo.png';
 import './Header.css';
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 export const Header = () =>
 {
+    const State = useSelector((state) => state.userReducer );
+
     return(
         <header>
             <nav className="main-nav">
@@ -19,8 +22,19 @@ export const Header = () =>
                 <div>
 
                     <Link to={'sign-in'} className="main-nav-item">
-                        <i className="fa fa-user-circle"></i>
-                        Sign In
+                        <>
+                            {State.username}
+                            <i className="fa fa-user-circle"></i>
+                        </>
+                        {State.token ?
+                            <>
+                                <i className="fa-solid fa-right-from-bracket"></i>
+                                Sing Out
+                            </>
+
+                            :
+                            "Sign In"
+                        }
                     </Link>
                 </div>
             </nav>

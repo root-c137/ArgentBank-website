@@ -1,9 +1,24 @@
 
 import './User.css';
 import {Account} from "../../components/Account/Account";
+import {useDispatch} from "react-redux";
+import {useEffect} from "react";
+import {GET_PROFILE, getProfile} from "../../actions/user.action";
 
 export const User = () =>
 {
+    const Dispatch = useDispatch();
+    
+    useEffect(() =>
+    {
+        console.log('username  : ');
+        if(localStorage.getItem('token') ){
+            console.log('yes');
+            Dispatch(getProfile());
+        }
+    });
+
+
     return(
         <main className="main bg-dark">
             <div className="header">
