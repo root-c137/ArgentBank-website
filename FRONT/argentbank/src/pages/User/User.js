@@ -19,7 +19,6 @@ export const User = () =>
     useEffect(() =>
     {
         if(localStorage.getItem('token') && !localStorage.getItem('firstName') ){
-            console.log('yes');
             Dispatch(getProfile());
         }
     });

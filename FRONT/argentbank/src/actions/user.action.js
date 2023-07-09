@@ -10,12 +10,12 @@ export const UPDATE_USERNAME = "UPDATE_USERNAME";
 
 export const Login = (Data) =>
 {
+
     return (dispatch) => {
         const LoginURL = "user/login";
         const Method = "POST";
 
         return EasyFetch(LoginURL, Data, Method).then((res) => {
-            console.log(res);
             dispatch({type : LOGIN, payload : res});
         })
     }
@@ -28,6 +28,7 @@ export const getProfile = () =>
         const Method = "POST";
 
         return EasyFetch(Url, null, Method, localStorage.getItem('token') ).then((res) => {
+            console.log(res);
             dispatch({type : GET_PROFILE, payload : res});
         })
     }

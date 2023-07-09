@@ -18,7 +18,6 @@ export const SignIn = () =>
 
     useEffect(() =>
     {
-        console.log(State.error );
         if(State.token )
         {
             Navigate('/profile');

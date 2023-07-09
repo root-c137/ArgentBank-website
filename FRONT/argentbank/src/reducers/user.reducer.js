@@ -31,7 +31,8 @@ export const userReducer = (state = initialState, action) => {
             localStorage.setItem('lastName', action.payload.body.lastName);
             localStorage.setItem('userName', action.payload.body.userName);
             localStorage.setItem('email', action.payload.body.email);
-            return {...state, firstName : action.payload.body.firstName};
+            return {...state, firstName : action.payload.body.firstName, lastName: action.payload.body.lastName,
+                username: action.payload.body.userName};
         }
         case UPDATE_USERNAME :
         {
